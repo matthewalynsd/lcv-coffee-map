@@ -24,10 +24,10 @@ function MenuItems() {
             <h2>{title}</h2>
             <p>{address}</p>
             <div className="icon-row">
-              {driveThrough === true && (
+              {driveThrough && (
                 <i className="fa-solid fa-car" title="Drive Through"></i>
               )}
-              {dineIn === true && (
+              {dineIn && (
                 <i className="fa-solid fa-utensils" title="Dine In"></i>
               )}
             </div>
@@ -69,6 +69,7 @@ export function LeafletMap() {
         tooltipAnchor: [1, -16],
         iconAnchor: [16, 30],
       });
+
       var hoverIcon = L.icon({
         iconUrl: "custom-icon-hover.png",
         iconSize: [32, 32],
@@ -85,6 +86,7 @@ export function LeafletMap() {
         mapMarker.setIcon(hoverIcon);
         mapMarker.openTooltip();
       });
+
       mapMarker.on("mouseout", function (e) {
         mapMarker.setIcon(defaultIcon);
         mapMarker.closeTooltip();
