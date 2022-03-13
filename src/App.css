@@ -1,0 +1,139 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* CUSTOM CSS BELOW - MD 03/12/2022 */
+:root
+{
+    --txt-color: #dddddd;
+    --bgd-color: #2E2F2D;
+    --std-padding: 1em;
+    --sml-padding: 0.5em;
+    --font-family: Verdana, Helvetica, sans-serif;
+}
+.container
+{
+    display: flex;
+}
+html
+{
+    background: var(--bgd-color);
+}
+#map
+{
+    height: 98vh;
+    width: 80%;
+}
+#menu
+{
+    width: 20%;
+    height: 98vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+h1
+{
+    font-family: var(--font-family);
+    color: var(--txt-color);
+    padding: var(--sml-padding);
+    font-size: 1.5em;
+}
+.menu-item
+{
+    font-family: var(--font-family);
+    color: var(--txt-color);
+    padding: var(--std-padding);
+}
+.menu-item h2
+{
+    font-weight: 600;
+    font-size: 1.15em;
+}
+.menu-item p
+{
+    color: var(--txt-color);
+    font-size: 0.90em;
+}
+.icon-row
+{
+    display: flex;
+    justify-content: flex-start;
+}
+i
+{
+    padding: 0 var(--sml-padding) 0 var(--sml-padding);
+}
+
+hr
+{
+    height: 2px;
+    border: 0;
+    background-color: rgb(27, 27, 27);
+}
+
+.recenter-button
+{
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  padding: 10px;
+  z-index: 500;
+  width: 100px;
+  border-radius: 75px;
+  border: none;
+  transition: ease all 200ms;
+  font-weight: bold;
+}
+.recenter-button:hover, .recenter-button:active
+{
+  background: #b3b3b3;
+}
+
+@media only screen and (max-width: 1200px) {
+  #menu{
+    width: 30%;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  #menu{
+    width: 0%;
+  }
+  #map{
+    width: 100%;
+  }
+}
