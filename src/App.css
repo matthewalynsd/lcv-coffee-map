@@ -38,76 +38,64 @@
 }
 
 /* CUSTOM CSS BELOW - MD 03/12/2022 */
-:root
-{
-    --txt-color: #dddddd;
-    --bgd-color: #2E2F2D;
-    --std-padding: 1em;
-    --sml-padding: 0.5em;
-    --font-family: Verdana, Helvetica, sans-serif;
+:root {
+  --txt-color: #dddddd;
+  --bgd-color: #2e2f2d;
+  --std-padding: 1em;
+  --sml-padding: 0.5em;
+  --font-family: Verdana, Helvetica, sans-serif;
 }
-.container
-{
-    display: flex;
+.container {
+  display: flex;
 }
-html
-{
-    background: var(--bgd-color);
+html {
+  background: var(--bgd-color);
 }
-#map
-{
-    height: 98vh;
-    width: 80%;
+#map {
+  height: 98vh;
+  width: 80%;
 }
-#menu
-{
-    width: 20%;
-    height: 98vh;
-    overflow-x: hidden;
-    overflow-y: auto;
+#menu {
+  width: 20%;
+  height: 98vh;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
-h1
-{
-    font-family: var(--font-family);
-    color: var(--txt-color);
-    padding: var(--sml-padding);
-    font-size: 1.5em;
+h1 {
+  font-family: var(--font-family);
+  color: var(--txt-color);
+  padding: var(--sml-padding);
+  font-size: 1.5em;
 }
-.menu-item
-{
-    font-family: var(--font-family);
-    color: var(--txt-color);
-    padding: var(--std-padding);
+.menu-item {
+  font-family: var(--font-family);
+  color: var(--txt-color);
+  padding: var(--std-padding);
 }
-.menu-item h2
-{
-    font-weight: 600;
-    font-size: 1.15em;
+.menu-item h2 {
+  font-weight: 600;
+  font-size: 1.15em;
 }
-.menu-item p
-{
-    color: var(--txt-color);
-    font-size: 0.90em;
-}
-.icon-row
-{
-    display: flex;
-    justify-content: flex-start;
-}
-i
-{
-    padding: 0 var(--sml-padding) 0 var(--sml-padding);
+.menu-item p {
+  color: var(--txt-color);
+  font-size: 0.9em;
 }
 
-hr
-{
-    height: 2px;
-    border: 0;
-    background-color: rgb(27, 27, 27);
+.icon-row {
+  display: flex;
+  justify-content: flex-start;
+}
+i {
+  padding: 0 var(--sml-padding) 0 var(--sml-padding);
 }
 
-.recenter-button
-{
+hr {
+  height: 2px;
+  border: 0;
+  background-color: rgb(27, 27, 27);
+}
+
+.recenter-button {
   position: absolute;
   bottom: 20px;
   left: 20px;
@@ -119,21 +107,33 @@ hr
   transition: ease all 200ms;
   font-weight: bold;
 }
-.recenter-button:hover, .recenter-button:active
-{
+.recenter-button:hover,
+.recenter-button:active {
   background: #b3b3b3;
 }
 
 @media only screen and (max-width: 1200px) {
-  #menu{
+  #menu {
     width: 30%;
   }
 }
 @media only screen and (max-width: 1200px) {
-  #menu{
+  #menu {
     width: 0%;
   }
-  #map{
+  #map {
     width: 100%;
+  }
+  .menu-icon {
+    color: white;
+    font-size: 30px;
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 500;
+  }
+  .menu-icon i {
+    color: white;
   }
 }

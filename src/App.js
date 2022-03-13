@@ -96,6 +96,9 @@ export function LeafletMap() {
 
   return (
     <div id="map">
+      <a href="javascript:void(0);" className="menu-icon">
+        <i class="fa fa-bars"></i>
+      </a>
       <button
         className="recenter-button"
         onClick={() => {
