@@ -80,7 +80,9 @@ h1 {
   color: var(--txt-color);
   font-size: 0.9em;
 }
-
+.menu-icon {
+  z-index: 0;
+}
 .icon-row {
   display: flex;
   justify-content: flex-start;
@@ -117,7 +119,7 @@ hr {
     width: 30%;
   }
 }
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1000px) {
   #menu {
     width: 0%;
   }
