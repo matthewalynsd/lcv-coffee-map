@@ -30,6 +30,7 @@ export default function LeafletMap() {
     
     function handleOnLocationFound(event)
     {
+      console.log('Working');
       const latlng = event.latlng;
       const radius = event.accuracy;
       const circle = L.circle(latlng, radius);
