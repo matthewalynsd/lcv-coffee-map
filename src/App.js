@@ -94,10 +94,18 @@ export function LeafletMap() {
     });
   }, []);
 
+handleMenuClick(){
+   const menu = document.getElementById(‘menu’);
+   const map = document.getElementById(‘map’);
+   menu.hasClass(‘active’) ? menu.removeClass(‘active’) : menu.addClass(‘active’);
+   map.hasClass(‘inactive’) ? map.removeClass(‘inactive’) : map.addClass(‘inactive’);
+   menuIcon.hasClass(‘fa-bars’) ? menuIcon.removeClass(‘fa-bars’) : menuIcon.addClass(‘fa-bars’);
+   menuIcon.hasClass(‘fa-xmark’) ? menuIcon.removeClass(‘fa-xmark’) : menuIcon.addClass(‘fa-xmark’);
+}
   return (
     <div id="map">
       <div className="menu-icon">
-        <i className="fa fa-bars"></i>
+        <i className="fa fa-bars" onClick="handleMenuClick()"></i>
       </div>
       <button
         className="recenter-button"
