@@ -109,14 +109,6 @@ export function LeafletMap() {
       <div className="menu-icon">
         <i className="fa fa-bars" onClick={handleMenuClick} id='menuIcon'></i>
       </div>
-      <button
-        className="recenter-button"
-        onClick={() => {
-          map.current.setView([46.406329, -117.038663], 14);
-        }}
-      >
-        Re-Center
-      </button>
     </div>
   );
 }
