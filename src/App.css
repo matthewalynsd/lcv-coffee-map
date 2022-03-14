@@ -62,8 +62,12 @@ html {
   overflow-y: auto;
 }
 
-.activeMenu {
+.active {
   width: 100%;
+  z-index: 499;
+}
+.inactive {
+  width: 0%;
 }
 h1 {
   font-family: var(--font-family);
