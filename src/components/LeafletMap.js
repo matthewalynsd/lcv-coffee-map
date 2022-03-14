@@ -5,13 +5,6 @@ import L from "leaflet";
 export default function LeafletMap() {
   const map = useRef(null);
   
-  function handleOnLocationFound(event)
-  {
-    const latlng = event.latlng;
-    const radius = event.accuracy;
-    const circle = L.circle(latlng, radius);
-    circle.addTo(map.current);
-  }
   useEffect(() => {
     map.current = L.map("map").setView([46.406329, -117.038663], 14);
     L.tileLayer(
@@ -34,6 +27,14 @@ export default function LeafletMap() {
     });
     
     map.current.on('locationFound', handleOnLocationFound);
+    
+    function handleOnLocationFound(event)
+    {
+      const latlng = event.latlng;
+      const radius = event.accuracy;
+      const circle = L.circle(latlng, radius);
+      circle.addTo(map.current);
+    }
     
     coffeeData.forEach(function (coffeeDataItem) {
       const splitCoords = coffeeDataItem.latLong.split(", ");
