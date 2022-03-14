@@ -61,6 +61,10 @@ html {
   overflow-x: hidden;
   overflow-y: auto;
 }
+
+.activeMenu {
+  width: 100%;
+}
 h1 {
   font-family: var(--font-family);
   color: var(--txt-color);
