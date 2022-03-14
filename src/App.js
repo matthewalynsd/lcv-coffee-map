@@ -107,7 +107,7 @@ export function LeafletMap() {
   return (
     <div id="map">
       <div className="menu-icon">
-        <i className="fa fa-bars" onClick="{handleMenuClick}" id='menuIcon'></i>
+        <i className="fa fa-bars" onClick={handleMenuClick} id='menuIcon'></i>
       </div>
       <button
         className="recenter-button"
