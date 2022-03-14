@@ -20,7 +20,7 @@ function App() {
 
 const MenuItem = (props) => {
   const {
-    item: { title, address, latLong, driveThrough, dineIn, ...rest },
+    item: { title, address, latLong, driveThrough, dineIn },
   } = props;
   return (
     <div key={title} className="menu-item">
