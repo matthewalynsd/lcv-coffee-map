@@ -33,7 +33,7 @@ const MenuItem = ({title, address, latLong, driveThrough, dineIn, ...rest }, ) =
               )}
             </div>
     </div>
-  ;)
+  );
 }
 
 function MenuItems() {
