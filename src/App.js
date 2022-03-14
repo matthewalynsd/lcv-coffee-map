@@ -11,6 +11,9 @@ function App() {
         <MenuItems />
       </div>
       <LeafletMap />
+      <div className="menu-icon">
+        <i className="fa fa-bars" onClick={handleMenuClick} id='menuIcon'></i>
+      </div>
     </div>
   );
 }
@@ -38,7 +41,7 @@ function MenuItems() {
   );
 }
 
-export function handleMenuClick(){
+function handleMenuClick(){
    const menu = document.getElementById('menu');
    const map = document.getElementById('map');
    const menuIcon = document.getElementById('menuIcon');
