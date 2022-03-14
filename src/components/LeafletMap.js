@@ -9,7 +9,7 @@ export default function LeafletMap() {
     const { current = {} } = mapRef;
     const { leafletElement: map } = current;
     
-    map = L.map("map").setView([46.406329, -117.038663], 14);
+    map.current = L.map("map").setView([46.406329, -117.038663], 14);
     L.tileLayer(
       "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
       {
