@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { coffeeData } from "./coffee-data";
+import { coffeeData } from "../coffee-data";
 import L from "leaflet";
 
 export default function LeafletMap() {
