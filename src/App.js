@@ -42,10 +42,10 @@ function handleMenuClick(){
    const menu = document.getElementById('menu');
    const map = document.getElementById('map');
    const menuIcon = document.getElementById('menuIcon');
-   menu.classList.contains('active') ? menu.removeClass('active') : menu.addClass('active');
-   map.classList.contains('inactive') ? map.removeClass('inactive') : map.addClass('inactive');
-   menuIcon.classList.contains('fa-bars') ? menuIcon.removeClass('fa-bars') : menuIcon.addClass('fa-bars');
-   menuIcon.classList.contains('fa-xmark') ? menuIcon.removeClass('fa-xmark') : menuIcon.addClass('fa-xmark');
+   menu.classList.contains('active') ? menu.classList.remove('active') : menu.classList.add('active');
+   map.classList.contains('inactive') ? map.classList.remove('inactive') : map.classList.add('inactive');
+   menuIcon.classList.contains('fa-bars') ? menuIcon.classList.remove('fa-bars') : menuIcon.classList.add('fa-bars');
+   menuIcon.classList.contains('fa-xmark') ? menuIcon.classList.remove('fa-xmark') : menuIcon.classList.add('fa-xmark');
 };
 
 export function LeafletMap() {
