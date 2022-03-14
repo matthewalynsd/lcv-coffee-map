@@ -12,38 +12,36 @@ function App() {
       </div>
       <LeafletMap />
       <div className="menu-icon">
-        <i className="fa fa-bars" onClick={handleMenuClick} id='menuIcon'></i>
+        <i className="fa fa-bars" onClick={handleMenuClick} id="menuIcon"></i>
       </div>
     </div>
   );
 }
 
-const MenuItem = ({title, address, latLong, driveThrough, dineIn, ...rest}) => {
-  
+const MenuItem = () => {
+  const {
+    item: { title, address, latLong, driveThrough, dineIn, ...rest },
+  } = props;
   return (
     <div key={title} className="menu-item">
-            <h2>{title}</h2>
-            <p>{address}</p>
-            <div className="icon-row">
-              {driveThrough && (
-                <i className="fa-solid fa-car" title="Drive Through"></i>
-              )}
-              {dineIn && (
-                <i className="fa-solid fa-utensils" title="Dine In"></i>
-              )}
-            </div>
+      <h2>{title}</h2>
+      <p>{address}</p>
+      <div className="icon-row">
+        {driveThrough && (
+          <i className="fa-solid fa-car" title="Drive Through"></i>
+        )}
+        {dineIn && <i className="fa-solid fa-utensils" title="Dine In"></i>}
+      </div>
     </div>
   );
-}
+};
 
 function MenuItems() {
   return (
     <>
-      {coffeeData.map(
-        (item) => (
-          <MenuItem item={item} />
-        )
-      )}
+      {coffeeData.map((item) => (
+        <MenuItem item={item} />
+      ))}
     </>
   );
 }
@@ -60,14 +58,14 @@ function MenuItems() {
 //   );
 // }
 
-function handleMenuClick(){
-   const menu = document.getElementById('menu');
-   const map = document.getElementById('map');
-   const menuIcon = document.getElementById('menuIcon');
-   menu.classList.toggle('active');
-   map.classList.toggle('inactive');
-   menuIcon.classList.toggle('fa-bars');
-   menuIcon.classList.toggle('fa-xmark');
-};
+function handleMenuClick() {
+  const menu = document.getElementById("menu");
+  const map = document.getElementById("map");
+  const menuIcon = document.getElementById("menuIcon");
+  menu.classList.toggle("active");
+  map.classList.toggle("inactive");
+  menuIcon.classList.toggle("fa-bars");
+  menuIcon.classList.toggle("fa-xmark");
+}
 
 export default App;
