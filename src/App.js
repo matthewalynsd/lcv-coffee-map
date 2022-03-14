@@ -41,6 +41,7 @@ function MenuItems() {
 function handleMenuClick(){
    const menu = document.getElementById('menu');
    const map = document.getElementById('map');
+   const menuIcon = document.getElementById('menuIcon');
    menu.hasClass('active') ? menu.removeClass('active') : menu.addClass('active');
    map.hasClass('inactive') ? map.removeClass('inactive') : map.addClass('inactive');
    menuIcon.hasClass('fa-bars') ? menuIcon.removeClass('fa-bars') : menuIcon.addClass('fa-bars');
@@ -106,7 +107,7 @@ export function LeafletMap() {
   return (
     <div id="map">
       <div className="menu-icon">
-        <i className="fa fa-bars" onClick="handleMenuClick()"></i>
+        <i className="fa fa-bars" onClick="handleMenuClick()" id='menuIcon'></i>
       </div>
       <button
         className="recenter-button"
