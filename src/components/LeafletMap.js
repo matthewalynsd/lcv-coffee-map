@@ -21,11 +21,8 @@ export default function LeafletMap() {
           "pk.eyJ1IjoibWF0dGhld2FseW5kIiwiYSI6ImNqdnNvcWQ3cDM4MWY0M3FvdGc1YnF2OXAifQ.1GIr-xDXI-8SPEuZMVB_ug",
       }
     ).addTo(map.current);
-    
-//     Disable until if statement is created
-//     map.current.locate({
-//       setView: true
-//     });
+
+    map.current.locate();
     
     map.current.on('locationfound', handleOnLocationFound);
     
