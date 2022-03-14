@@ -1,4 +1,4 @@
-export function LeafletMap() {
+export default function LeafletMap() {
   const map = useRef(null);
 
   useEffect(() => {
