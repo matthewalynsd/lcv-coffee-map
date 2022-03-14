@@ -1,8 +1,7 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import "./App.css";
 import LeafletMap from "./components/LeafletMap.js";
 import { coffeeData } from "./coffee-data";
-import L from "leaflet";
 
 function App() {
   return (
