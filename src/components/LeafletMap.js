@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { coffeeData } from "../coffee-data";
 import L from "leaflet";
-import {handleMenuClick} from "../App.js";
 
 export default function LeafletMap() {
   const map = useRef(null);
@@ -60,10 +59,6 @@ export default function LeafletMap() {
   }, []);
 
   return (
-    <div id="map">
-      <div className="menu-icon">
-        <i className="fa fa-bars" onClick={handleMenuClick} id='menuIcon'></i>
-      </div>
-    </div>
+    <div id="map"></div>
   );
 }
