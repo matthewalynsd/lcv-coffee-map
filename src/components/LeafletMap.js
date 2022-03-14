@@ -27,7 +27,7 @@ export default function LeafletMap() {
       watch: true
     });
     
-    map.current.on('locationFound', handleOnLocationFound);
+    map.current.on('locationfound', handleOnLocationFound);
     
     function handleOnLocationFound(event)
     {
