@@ -30,7 +30,8 @@ export default function LeafletMap() {
     {
       const latlng = event.latlng;
       const radius = event.accuracy;
-      const circle = L.circle(latlng, radius).addTo(map.current);
+      const circle = L.circle(latlng, radius);
+      circle.addTo(map.current);
     }
     map.current.on('locationFound', handleOnLocationFound);
     coffeeData.forEach(function (coffeeDataItem) {
