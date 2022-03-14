@@ -24,9 +24,15 @@ export default function LeafletMap() {
     
     map.current.locate({
       setView: true
-    }
-    );
+    });
     
+    function handleOnLocationFound(event)
+    {
+      const latlng = event.latlng;
+      const radius = event.accuracy;
+      const circle = L.circle(latlng, radius).addTo(map.current);
+    }
+    map.current.on('locationFound', handleOnLocationFound);
     coffeeData.forEach(function (coffeeDataItem) {
       const splitCoords = coffeeDataItem.latLong.split(", ");
       const lat = splitCoords[0];
