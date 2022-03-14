@@ -62,13 +62,6 @@ html {
   overflow-y: auto;
 }
 
-.active {
-  width: 100%;
-  z-index: 499;
-}
-.inactive {
-  width: 0%;
-}
 h1 {
   font-family: var(--font-family);
   color: var(--txt-color);
@@ -114,8 +107,15 @@ hr {
   #menu {
     width: 0%;
   }
+  #menu.active{
+    width: 100%;
+    z-index: 499;
+  }
   #map {
     width: 100%;
+  }
+  #map.inactive{
+    width: 0%;
   }
   .menu-icon {
     color: white;
