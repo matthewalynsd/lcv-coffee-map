@@ -83,6 +83,7 @@ h1 {
 }
 .menu-icon {
   z-index: 0;
+  display: none;
 }
 .icon-row {
   display: flex;
