@@ -39,7 +39,7 @@ function MenuItems() {
   );
 }
 
-function handleMenuClick(){
+export function handleMenuClick(){
    const menu = document.getElementById('menu');
    const map = document.getElementById('map');
    const menuIcon = document.getElementById('menuIcon');
