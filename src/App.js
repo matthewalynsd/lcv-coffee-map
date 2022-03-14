@@ -18,7 +18,7 @@ function App() {
   );
 }
 
-const MenuItem = ({title, address, latLong, driveThrough, dineIn ...rest }, ) => {
+const MenuItem = ({title, address, latLong, driveThrough, dineIn, ...rest }, ) => {
   
   return (
     <div key={title} className="menu-item">
