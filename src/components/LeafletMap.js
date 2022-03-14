@@ -21,7 +21,9 @@ export default function LeafletMap() {
           "pk.eyJ1IjoibWF0dGhld2FseW5kIiwiYSI6ImNqdnNvcWQ3cDM4MWY0M3FvdGc1YnF2OXAifQ.1GIr-xDXI-8SPEuZMVB_ug",
       }
     ).addTo(map.current);
-
+    
+    L.control.locate().addTo(map.current);
+    
     coffeeData.forEach(function (coffeeDataItem) {
       const splitCoords = coffeeDataItem.latLong.split(", ");
       const lat = splitCoords[0];
