@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { coffeeData } from "../coffee-data";
 import L from "leaflet";
+import {handleMenuClick} from "../App.js";
 
 export default function LeafletMap() {
   const map = useRef(null);
