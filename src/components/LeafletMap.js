@@ -23,7 +23,7 @@ export default function LeafletMap() {
     ).addTo(map.current);
     
     map.current.locate({
-      setView: true;
+      setView: true
     }
     );
     
