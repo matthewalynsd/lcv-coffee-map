@@ -101,7 +101,7 @@ handleMenuClick(){
    map.hasClass(‘inactive’) ? map.removeClass(‘inactive’) : map.addClass(‘inactive’);
    menuIcon.hasClass(‘fa-bars’) ? menuIcon.removeClass(‘fa-bars’) : menuIcon.addClass(‘fa-bars’);
    menuIcon.hasClass(‘fa-xmark’) ? menuIcon.removeClass(‘fa-xmark’) : menuIcon.addClass(‘fa-xmark’);
-}
+};
   return (
     <div id="map">
       <div className="menu-icon">
