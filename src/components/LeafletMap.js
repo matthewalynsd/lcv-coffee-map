@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { coffeeData } from "../coffee-data";
 import L from "leaflet";
-import Locate from "../leaflet-locatecontrol/leaflet-locatecontrol-gh-pages/dist/L.Control.Locate.min.js";
+import "../leaflet-locatecontrol/leaflet-locatecontrol-gh-pages/dist/L.Control.Locate.min.js";
 
 export default function LeafletMap() {
   const map = useRef(null);
