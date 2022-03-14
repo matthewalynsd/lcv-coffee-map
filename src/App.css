@@ -142,8 +142,10 @@ hr {
     right: 20px;
     top: 20px;
     z-index: 500;
+    cursor:'pointer';
   }
   .menu-icon i {
     color: white;
+    cursor:'pointer';
   }
 }
