@@ -18,7 +18,7 @@ function App() {
   );
 }
 
-const MenuItem = () => {
+const MenuItem = (props) => {
   const {
     item: { title, address, latLong, driveThrough, dineIn, ...rest },
   } = props;
