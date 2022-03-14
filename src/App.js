@@ -18,34 +18,47 @@ function App() {
   );
 }
 
-function MenuItem(props) {
+const MenuItem = ({title, address, latLong, driveThrough, dineIn ...rest }, ) => {
+  
   return (
-    <div key={props.shopTitle} className="menu-item">
-            <h2>{props.shopTitle}</h2>
-            <p>{props.address}</p>
+    <div key={title} className="menu-item">
+            <h2>{title}</h2>
+            <p>{address}</p>
             <div className="icon-row">
-              {props.driveThrough && (
+              {driveThrough && (
                 <i className="fa-solid fa-car" title="Drive Through"></i>
               )}
-              {props.dineIn && (
+              {dineIn && (
                 <i className="fa-solid fa-utensils" title="Dine In"></i>
               )}
             </div>
-          </div>
-  );
+    </div>
+  ;)
 }
 
 function MenuItems() {
   return (
     <>
       {coffeeData.map(
-        ({ title, address, latLong, driveThrough, dineIn, roaster }) => (
-          <MenuItem shopTitle={title} address={address} driveThrough={driveThrough} dineIn={dineIn} />
+        (item) => (
+          <MenuItem item={item} />
         )
       )}
     </>
   );
 }
+
+// function MenuItems() {
+//   return (
+//     <>
+//       {coffeeData.map(
+//         ({ title, address, latLong, driveThrough, dineIn, roaster }) => (
+//           <MenuItem shopTitle={title} address={address} driveThrough={driveThrough} dineIn={dineIn} />
+//         )
+//       )}
+//     </>
+//   );
+// }
 
 function handleMenuClick(){
    const menu = document.getElementById('menu');
