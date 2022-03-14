@@ -24,10 +24,10 @@ function MenuItem(props) {
             <h2>{props.shopTitle}</h2>
             <p>{props.address}</p>
             <div className="icon-row">
-              {{props.driveThrough} && (
+              {props.driveThrough && (
                 <i className="fa-solid fa-car" title="Drive Through"></i>
               )}
-              {{props.dineIn} && (
+              {props.dineIn && (
                 <i className="fa-solid fa-utensils" title="Dine In"></i>
               )}
             </div>
