@@ -32,7 +32,7 @@ export default function LeafletMap() {
     {
       console.log('Working');
       const latlng = event.latlng;
-      const radius = event.accuracy;
+      const radius = event.accuracy / 2;
       const circle = L.circle(latlng, radius);
       circle.addTo(map.current);
     }
