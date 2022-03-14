@@ -3,17 +3,13 @@ import { coffeeData } from "../coffee-data";
 import L from "leaflet";
 
 export default function LeafletMap() {
-  const map = useRef(null);
+  const mapRef = useRef();
   
-  function handleOnLocationFound(event)
-  {
-    const latlng = event.latlng;
-    const radius = event.accuracy;
-    const circle = L.circle(latlng, radius);
-    circle.addTo(map.current);
-  }
   useEffect(() => {
-    map.current = L.map("map").setView([46.406329, -117.038663], 14);
+    const { current = {} } = mapRef;
+    const { leafletElement: map } = current;
+    
+    map = L.map("map").setView([46.406329, -117.038663], 14);
     L.tileLayer(
       "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
       {
@@ -27,13 +23,13 @@ export default function LeafletMap() {
         accessToken:
           "pk.eyJ1IjoibWF0dGhld2FseW5kIiwiYSI6ImNqdnNvcWQ3cDM4MWY0M3FvdGc1YnF2OXAifQ.1GIr-xDXI-8SPEuZMVB_ug",
       }
-    ).addTo(map.current);
+    ).addTo(map);
     
-    map.current.locate({
+    map.locate({
       setView: true
     });
     
-    map.current.on('locationFound', handleOnLocationFound);
+    map.on('locationFound', handleOnLocationFound);
     
     coffeeData.forEach(function (coffeeDataItem) {
       const splitCoords = coffeeDataItem.latLong.split(", ");
@@ -55,7 +51,7 @@ export default function LeafletMap() {
       });
 
       var mapMarker = L.marker([lat, lon], { icon: defaultIcon }).addTo(
-        map.current
+        map
       );
       mapMarker.bindTooltip(coffeeDataItem.title);
 
@@ -71,6 +67,17 @@ export default function LeafletMap() {
     });
   }, []);
 
+  function handleOnLocationFound(event)
+  {
+    const { current = {} } = mapRef;
+    const { leafletElement: map } = current;
+    
+    const latlng = event.latlng;
+    const radius = event.accuracy;
+    const circle = L.circle(latlng, radius);
+    circle.addTo(map);
+  }
+  
   return (
     <div id="map"></div>
   );
