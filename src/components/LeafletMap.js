@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { coffeeData } from "../coffee-data";
 import L from "leaflet";
-import "../leaflet-locatecontrol/leaflet-locatecontrol-gh-pages/dist/L.Control.Locate.min.js";
 
 export default function LeafletMap() {
   const map = useRef(null);
@@ -23,7 +22,10 @@ export default function LeafletMap() {
       }
     ).addTo(map.current);
     
-    L.control.locate().addTo(map.current);
+    map.current.locate({
+      setView: true;
+    }
+    );
     
     coffeeData.forEach(function (coffeeDataItem) {
       const splitCoords = coffeeDataItem.latLong.split(", ");
