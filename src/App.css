@@ -161,5 +161,8 @@ hr {
   .locate-button i
   {
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
