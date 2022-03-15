@@ -153,6 +153,7 @@ hr {
     background: #191A1A;
     width: 70px;
     height: 70px;
+    text-align: center;
   }
   .locate-button:hover, .locate-button:active
   {
