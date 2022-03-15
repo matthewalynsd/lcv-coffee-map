@@ -23,7 +23,7 @@ export default function LeafletMap() {
     ).addTo(map.current);
 
     function detectMob() {
-      return ( ( window.innerWidth <= 800 ) && ( window.innerHeight <= 600 ) );
+      return ( ( window.innerWidth <= 1000 ) && ( window.innerHeight <= 1300 ) );
     }
     if(detectMob() === true){
       console.log(detectMob());
