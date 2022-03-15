@@ -25,7 +25,8 @@ export default function LeafletMap() {
     map.current.locate();
     
     map.current.on('locationfound', handleOnLocationFound);
-    document.getElementById('locateButton').on('click', handleLocateClick);
+    const locateButton = document.getElementById('locateButton');
+    locateButton.on('click', handleLocateClick);
 
     function handleOnLocationFound(event)
     {
