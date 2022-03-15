@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { coffeeData } from "../coffee-data";
 import L from "leaflet";
 
@@ -30,23 +30,21 @@ export default function LeafletMap() {
       handleLocateClick();
     });
 
-
+    var currentLocation, currentRadius;
     function handleOnLocationFound(event)
     {
-      const [location, setLocation] = useState(event.latlng);
-
       const radius = event.accuracy / 2;
       const userRadius = event.accuracy /10;
       const latlng = event.latlng;
-      if (location)  { 
-        map.current.removeLayer(location);
+      if (currentlocation)  { 
+        map.current.removeLayer(currentlocation);
         map.current.removeLayer(currentradius);
       }
-      location = L.circle(latlng, userRadius);
+      currentlocation = L.circle(latlng, userRadius);
       currentradius = L.circle(latlng, radius);
       
       currentradius.addTo(map.current);
-      location.addTo(map.current);
+      currentlocation.addTo(map.current);
     }
 
     function handleLocateClick()
