@@ -32,8 +32,8 @@ export default function LeafletMap() {
       const userRadius = event.accuracy /10;
       const latlng = event.latlng;
       
-      userLoc = L.circle(latlng, userRadius);
-      circle = L.circle(latlng, radius);
+      var userLoc = L.circle(latlng, userRadius);
+      var circle = L.circle(latlng, radius);
       
       userLoc.addTo(map.current);
       circle.addTo(map.current);
