@@ -160,10 +160,6 @@ hr {
   }
   .locate-button i
   {
-    position: absolute;
-    left: 50%;
-    top: 50%;
     color: white;
-    cursor:'pointer';
   }
 }
