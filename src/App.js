@@ -49,18 +49,6 @@ function MenuItems() {
   );
 }
 
-// function MenuItems() {
-//   return (
-//     <>
-//       {coffeeData.map(
-//         ({ title, address, latLong, driveThrough, dineIn, roaster }) => (
-//           <MenuItem shopTitle={title} address={address} driveThrough={driveThrough} dineIn={dineIn} />
-//         )
-//       )}
-//     </>
-//   );
-// }
-
 function handleMenuClick() {
   const menu = document.getElementById("menu");
   const map = document.getElementById("map");

@@ -21,14 +21,9 @@ export default function LeafletMap() {
           "pk.eyJ1IjoibWF0dGhld2FseW5kIiwiYSI6ImNqdnNvcWQ3cDM4MWY0M3FvdGc1YnF2OXAifQ.1GIr-xDXI-8SPEuZMVB_ug",
       }
     ).addTo(map.current);
-
-    function detectMob() {
-      return ( ( window.innerWidth <= 1000 ) && ( window.innerHeight <= 1300 ) );
-    }
-    if(detectMob() === true){
-      console.log(detectMob());
-      map.current.locate();
-    }
+    
+    map.current.locate();
+    
     map.current.on('locationfound', handleOnLocationFound);
 
     function handleOnLocationFound(event)
