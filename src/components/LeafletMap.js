@@ -43,8 +43,8 @@ export default function LeafletMap() {
       currentlocation = L.circle(latlng, userRadius, {color: '#ffffff'});
       currentradius = L.circle(latlng, radius);
       
-      currentRadius.addTo(map.current);
-      userCircle.addTo(map.current);
+      currentradius.addTo(map.current);
+      currentlocation.addTo(map.current);
     }
 
     function handleLocateClick()
