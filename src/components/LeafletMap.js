@@ -30,14 +30,20 @@ export default function LeafletMap() {
       handleLocateClick();
     });
 
+    var currentLocation, currentRadius;
     function handleOnLocationFound(event)
     {
-      const latlng = event.latlng;
       const radius = event.accuracy / 2;
       const userRadius = event.accuracy /10;
-      const circle = L.circle(latlng, radius);
-      const userCircle = L.circle(latlng, userRadius, {color: '#ffffff'});
-      circle.addTo(map.current);
+      const latlng = event.latlng;
+      if (currentlocation)  { 
+        map.current.removeLayer(currentlocation);
+        map.current.removeLayer(currentradius);
+      }
+      currentlocation = L.circle(latlng, userRadius, {color: '#ffffff'});
+      currentradius = L.circle(latlng, radius);
+      
+      currentRadius.addTo(map.current);
       userCircle.addTo(map.current);
     }
 
