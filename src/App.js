@@ -30,9 +30,7 @@ const MenuItem = (props) => {
       <h2>{title}</h2>
       <p>{address}</p>
       <div className="icon-row">
-        {driveThrough && (
-          <i className="fa-solid fa-car" title="Drive Through"></i>
-        )}
+        {driveThrough && <i className="fa-solid fa-car" title="Drive Through"></i>}
         {dineIn && <i className="fa-solid fa-utensils" title="Dine In"></i>}
       </div>
     </div>
