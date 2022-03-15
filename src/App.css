@@ -99,6 +99,11 @@ hr {
   background-color: rgb(27, 27, 27);
 }
 
+.locate-button
+{
+  display: none;
+}
+
 @media only screen and (max-width: 1200px) {
   #menu {
     width: 30%;
@@ -130,6 +135,22 @@ hr {
     cursor:'pointer';
   }
   .menu-icon i {
+    color: white;
+    cursor:'pointer';
+  }
+  .locate-button
+  {
+    color: white;
+    font-size: 30px;
+    display: block;
+    position: absolute;
+    right: 20px;
+    bottom: 75px;
+    z-index: 500;
+    cursor:'pointer';
+  }
+  .locate-button i
+  {
     color: white;
     cursor:'pointer';
   }
