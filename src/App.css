@@ -43,7 +43,7 @@
   --bgd-color: #2e2f2d;
   --std-padding: 1em;
   --sml-padding: 0.5em;
-  --font-family: Verdana, Helvetica, sans-serif;
+  --font-family: 'Poppins', Helvetica, sans-serif;
 }
 .container {
   display: flex;
@@ -74,7 +74,7 @@ h1 {
   padding: var(--std-padding);
 }
 .menu-item h2 {
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1.15em;
 }
 .menu-item p {
