@@ -28,6 +28,10 @@ export default function LeafletMap() {
     const locateButton = document.getElementById('locateButton');
     locateButton.on('click', handleLocateClick);
 
+    L.DomEvent.addListener(L.DomUtil.get('locateButton'), 'click', function () {
+      handleLocateClick();
+    });
+
     function handleOnLocationFound(event)
     {
       const latlng = event.latlng;
