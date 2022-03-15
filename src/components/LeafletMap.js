@@ -43,9 +43,9 @@ export default function LeafletMap() {
       circle.addTo(map.current);
     }
 
-    L.DomEvent.addListener(L.DomUtil.get('locateButton'), 'click', function () {
-      handleLocateClick();
-    });
+    // L.DomEvent.addListener(L.DomUtil.get('locateButton'), 'click', function () {
+    //   handleLocateClick();
+    // });
     function handleLocateClick()
     {
       map.current.locate({setView:true});
