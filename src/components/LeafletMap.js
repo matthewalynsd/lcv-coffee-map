@@ -31,7 +31,8 @@ export default function LeafletMap() {
       handleLocateClick();
     });
 
-    
+    currentLocation.current = locationfound.latlng;
+    currentRadius.current = null;
     function handleOnLocationFound(event)
     {
       const radius = event.accuracy / 2;
