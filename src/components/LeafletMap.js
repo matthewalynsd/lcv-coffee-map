@@ -25,10 +25,10 @@ export default function LeafletMap() {
     map.current.locate();
     
     map.current.on('locationfound', handleOnLocationFound);
-    
+    document.getElementById('locateButton').on('click', handleLocateClick);
+
     function handleOnLocationFound(event)
     {
-      console.log('Working');
       const latlng = event.latlng;
       const radius = event.accuracy / 2;
       const userRadius = event.accuracy /10;
@@ -36,6 +36,12 @@ export default function LeafletMap() {
       const userCircle = L.circle(latlng, userRadius, {color: '#ffffff'});
       circle.addTo(map.current);
       userCircle.addTo(map.current);
+    }
+
+    function handleLocateClick()
+    {
+      console.log('Working');
+      map.current.locate({setView:true});
     }
     
     coffeeData.forEach(function (coffeeDataItem) {

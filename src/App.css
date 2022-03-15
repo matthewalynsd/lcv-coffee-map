@@ -148,6 +148,15 @@ hr {
     bottom: 75px;
     z-index: 500;
     cursor:'pointer';
+    border-radius: 60px;
+    border: none;
+    background: #191A1A;
+    width: 70px;
+    height: 70px;
+  }
+  .locate-button:hover, .locate-button:active
+  {
+    background: #000000;
   }
   .locate-button i
   {
