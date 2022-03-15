@@ -22,8 +22,12 @@ export default function LeafletMap() {
       }
     ).addTo(map.current);
 
-    map.current.locate();
-    
+    function detectMob() {
+      return ( ( window.innerWidth <= 800 ) && ( window.innerHeight <= 600 ) );
+    }
+    if(detectMob() == false){
+      map.current.locate();
+    }
     map.current.on('locationfound', handleOnLocationFound);
 
     function handleOnLocationFound(event)
