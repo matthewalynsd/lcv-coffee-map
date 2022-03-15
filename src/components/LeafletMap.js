@@ -25,7 +25,7 @@ export default function LeafletMap() {
     function detectMob() {
       return ( ( window.innerWidth <= 800 ) && ( window.innerHeight <= 600 ) );
     }
-    if(detectMob() === false){
+    if(detectMob() === true){
       console.log(detectMob());
       map.current.locate();
     }
