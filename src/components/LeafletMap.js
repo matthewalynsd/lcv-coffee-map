@@ -34,7 +34,7 @@ export default function LeafletMap() {
       
       var userLoc = L.circle(latlng, userRadius);
       var circle = L.circle(latlng, radius);
-      
+      userLoc.bindTooltip('You are here!').openTooltip();
       userLoc.addTo(map.current);
       circle.addTo(map.current);
     }
