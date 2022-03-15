@@ -28,7 +28,7 @@ export default function LeafletMap() {
     if(detectMob() == false){
       map.current.locate();
     }
-    //map.current.on('locationfound', handleOnLocationFound);
+    map.current.on('locationfound', handleOnLocationFound);
 
     function handleOnLocationFound(event)
     {
