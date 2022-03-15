@@ -4,7 +4,8 @@ import L from "leaflet";
 
 export default function LeafletMap() {
   const map = useRef(null);
-  
+  const currentLocation = useRef(null);
+  const currentRadius = useRef(null);
   useEffect(() => {
     map.current = L.map("map").setView([46.406329, -117.038663], 14);
     L.tileLayer(
@@ -30,8 +31,7 @@ export default function LeafletMap() {
       handleLocateClick();
     });
 
-    const currentLocation = useRef(null);
-    const currentRadius = useRef(null);
+    
     function handleOnLocationFound(event)
     {
       const radius = event.accuracy / 2;
