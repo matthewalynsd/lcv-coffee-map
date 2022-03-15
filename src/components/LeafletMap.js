@@ -4,8 +4,7 @@ import L from "leaflet";
 
 export default function LeafletMap() {
   const map = useRef(null);
-  const currentLocation = useRef(null);
-  const currentRadius = useRef(null);
+
   useEffect(() => {
     map.current = L.map("map").setView([46.406329, -117.038663], 14);
     L.tileLayer(
@@ -27,28 +26,22 @@ export default function LeafletMap() {
     
     map.current.on('locationfound', handleOnLocationFound);
 
-    L.DomEvent.addListener(L.DomUtil.get('locateButton'), 'click', function () {
-      handleLocateClick();
-    });
-
-    currentLocation.current = locationfound.latlng;
-    currentRadius.current = null;
     function handleOnLocationFound(event)
     {
       const radius = event.accuracy / 2;
       const userRadius = event.accuracy /10;
       const latlng = event.latlng;
-      if (currentlocation.current)  { 
-        map.current.removeLayer(currentlocation.current);
-        map.current.removeLayer(currentradius.current);
-      }
-      currentlocation.current = L.circle(latlng, userRadius);
-      currentradius.current = L.circle(latlng, radius);
       
-      currentradius.current.addTo(map.current);
-      currentlocation.current.addTo(map.current);
+      userLoc = L.circle(latlng, userRadius);
+      circle = L.circle(latlng, radius);
+      
+      userLoc.addTo(map.current);
+      circle.addTo(map.current);
     }
 
+    L.DomEvent.addListener(L.DomUtil.get('locateButton'), 'click', function () {
+      handleLocateClick();
+    });
     function handleLocateClick()
     {
       map.current.locate({setView:true});
