@@ -46,10 +46,10 @@ export default function LeafletMap() {
     // L.DomEvent.addListener(L.DomUtil.get('locateButton'), 'click', function () {
     //   handleLocateClick();
     // });
-    function handleLocateClick()
-    {
-      map.current.locate({setView:true});
-    }
+    // function handleLocateClick()
+    // {
+    //   map.current.locate({setView:true});
+    // }
     
     coffeeData.forEach(function (coffeeDataItem) {
       const splitCoords = coffeeDataItem.latLong.split(", ");
