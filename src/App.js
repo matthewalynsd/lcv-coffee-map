@@ -14,9 +14,9 @@ function App() {
       <div className="menu-icon">
         <i className="fa fa-bars" onClick={handleMenuClick} id="menuIcon"></i>
       </div>
-      <button className="locate-button" id="locateButton">
+      {/* <button className="locate-button" id="locateButton">
         <i className="fa fa-location-arrow"></i>
-      </button>
+      </button> */}
     </div>
   );
 }
