@@ -26,6 +26,7 @@ export default function LeafletMap() {
       return ( ( window.innerWidth <= 800 ) && ( window.innerHeight <= 600 ) );
     }
     if(detectMob() === false){
+      console.log(detectMob());
       map.current.locate();
     }
     map.current.on('locationfound', handleOnLocationFound);
