@@ -127,4 +127,20 @@ export const coffeeData = [
     dineIn: false,
     roaster: null,
   },
+  {
+    title: "Starbucks - Thain",
+    address: "1325 21st St, Lewiston, ID 83501",
+    latLong: "46.406625, -117.001856",
+    driveThrough: true,
+    dineIn: true,
+    roaster: null,
+  },
+  {
+    title: "Starbucks - Bridge St.",
+    address: "303 Bridge St #1, Clarkston, WA 99403",
+    latLong: "46.419918, -117.041947",
+    driveThrough: true,
+    dineIn: true,
+    roaster: null,
+  },
 ];
