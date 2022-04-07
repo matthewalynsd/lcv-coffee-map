@@ -4,7 +4,7 @@ This map was created to highlight and categorize the various coffee establishmen
 Contact matt@mattd.design to request features or add coffee shops.
 
 # Version 2 Roadmap
-Add more locations (moscow, uniontown, etc)
+- [ ] Add more locations (moscow, uniontown, etc)
 - [ ] Add drip coffee availability booleans to JSON and display as icon
 - [ ] Add Lewiston/Pullman/Moscow buttons to fly to different cities
 - [ ] Abstract conditional icons out to their own component for easier implementation
