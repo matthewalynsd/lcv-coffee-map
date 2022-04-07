@@ -3,8 +3,8 @@ import { coffeeData } from "../coffee-data";
 import L from "leaflet";
 
 export default function LeafletMap() {
+  // useRef to target map instance
   const map = useRef(null);
-
   useEffect(() => {
     map.current = L.map("map").setView([46.406329, -117.038663], 14);
     L.tileLayer(
@@ -21,11 +21,12 @@ export default function LeafletMap() {
           "pk.eyJ1IjoibWF0dGhld2FseW5kIiwiYSI6ImNqdnNvcWQ3cDM4MWY0M3FvdGc1YnF2OXAifQ.1GIr-xDXI-8SPEuZMVB_ug",
       }
     ).addTo(map.current);
-    
+    //Locate current user on page load
     map.current.locate();
-    
+    //Fire event on location found
     map.current.on('locationfound', handleOnLocationFound);
 
+    //Add circle shape to user's location on map
     function handleOnLocationFound(event)
     {
       const radius = event.accuracy / 2;
@@ -37,27 +38,24 @@ export default function LeafletMap() {
       userLoc.addTo(map.current);
       circle.addTo(map.current);
     }
-
-    // L.DomEvent.addListener(L.DomUtil.get('locateButton'), 'click', function () {
-    //   handleLocateClick();
-    // });
-    // function handleLocateClick()
-    // {
-    //   map.current.locate({setView:true});
-    // }
     
+    //Add map markers per coffeeData object item
     coffeeData.forEach(function (coffeeDataItem) {
+      //object coords are in standard decimal format, need to be split by comma
       const splitCoords = coffeeDataItem.latLong.split(", ");
+      //lat and long are assigned from split coordinates
       const lat = splitCoords[0];
       const lon = splitCoords[1];
 
+      //custom icon set here, the default icon is an outdated blue
       var defaultIcon = L.icon({
         iconUrl: "custom-icon.png",
         iconSize: [32, 32],
         tooltipAnchor: [1, -16],
         iconAnchor: [16, 30],
       });
-
+      
+      //custom icon hover state set here
       var hoverIcon = L.icon({
         iconUrl: "custom-icon-hover.png",
         iconSize: [32, 32],
@@ -65,16 +63,20 @@ export default function LeafletMap() {
         iconAnchor: [16, 30],
       });
 
+      //add markers to map instance, using custom icon
       var mapMarker = L.marker([lat, lon], { icon: defaultIcon }).addTo(
         map.current
       );
+      //bind the title to a tooltip
       mapMarker.bindTooltip(coffeeDataItem.title);
 
+      //on hover, show the tooltip
       mapMarker.on("mouseover", function (e) {
         mapMarker.setIcon(hoverIcon);
         mapMarker.openTooltip();
       });
 
+      //close on mouseout
       mapMarker.on("mouseout", function (e) {
         mapMarker.setIcon(defaultIcon);
         mapMarker.closeTooltip();

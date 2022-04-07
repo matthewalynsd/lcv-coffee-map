@@ -14,13 +14,11 @@ function App() {
       <div className="menu-icon">
         <i className="fa fa-bars" onClick={handleMenuClick} id="menuIcon"></i>
       </div>
-      {/* <button className="locate-button" id="locateButton">
-        <i className="fa fa-location-arrow"></i>
-      </button> */}
     </div>
   );
 }
 
+// Individual menu item component, takes props from MenuItems component loop
 const MenuItem = (props) => {
   const {
     item: { title, address, driveThrough, dineIn },
@@ -37,6 +35,7 @@ const MenuItem = (props) => {
   );
 };
 
+// Sidebar/overlay menu of menu items, looped from coffeeData object (imported above)
 function MenuItems() {
   return (
     <>
@@ -47,6 +46,7 @@ function MenuItems() {
   );
 }
 
+// Click handler for mobile menu toggle icon: if menu is closed => then open it and change icon class. If menu is opened => then close it and change icon class.
 function handleMenuClick() {
   const menu = document.getElementById("menu");
   const map = document.getElementById("map");
