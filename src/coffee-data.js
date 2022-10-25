@@ -16,6 +16,14 @@ export const coffeeData = [
     roaster: "Landgrove Coffee",
   },
   {
+    title: "Bumper Crop Coffee Roasters",
+    address: "818 Main St Byp, Lewiston, ID 83501",
+    latLong: "46.420280, -117.023440",
+    driveThrough: false,
+    dineIn: true,
+    roaster: "Rivertown Coffee",
+  },
+  {
     title: "Cafe La Tay's",
     address: "1485 15th St, Clarkston, WA 99403",
     latLong: "46.400960, -117.068870",
