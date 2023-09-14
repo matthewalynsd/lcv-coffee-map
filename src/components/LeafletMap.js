@@ -6,7 +6,7 @@ export default function LeafletMap() {
   // useRef to target map instance
   const map = useRef(null);
   useEffect(() => {
-    map.current = L.map("map").setView([46.192995, -115.986976], 14);
+    map.current = L.map("map").setView([46.192995, -115.986976], 12);
     L.tileLayer(
       "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
       {
